@@ -9,3 +9,5 @@ function make(input) {
     };
     return foo(input);
 }
+
+module.exports = make;

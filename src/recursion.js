@@ -10,4 +10,7 @@ function treeToArray(crntArr,nodesArr) {
     if (nextNodesArr.length) return treeToArray(crntArr, nextNodesArr);
     return crntArr;
 }
+
 const recursion = root => treeToArray([],[root]);
+
+module.exports = recursion;
