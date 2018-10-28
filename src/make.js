@@ -1,13 +1,13 @@
 function make(input) {
-    const elems = [];
-    const foo = function step(value) {
-        if(!(value instanceof Function)) {
-            elems.push(...arguments);
-            return step;
-        }
-        else return elems.reduce(value);
-    };
-    return foo(input);
+  const elems = [];
+  const foo = function step(...args) {
+    if (!(args[0] instanceof Function)) {
+      elems.push(...args);
+      return step;
+    }
+    return elems.reduce(...args);
+  };
+  return foo(input);
 }
 
 module.exports = make;

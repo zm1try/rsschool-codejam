@@ -26,7 +26,7 @@ describe('recursion', () => {
     };
     const result = recursion(tree);
     assert.deepStrictEqual(result, [[100], [90, 120], [70, 99, 110, 130]]);
-    });
+  });
   it('should return [[50], [40, 60], [30, 45, 55, 75]]', () => {
     const tree = {
       value: 50,
@@ -37,17 +37,17 @@ describe('recursion', () => {
         },
         right: {
           value: 45,
-        }
+        },
       },
       right: {
         value: 60,
         left: {
-          value: 55
+          value: 55,
         },
         right: {
-          value: 75
-        }
-      }
+          value: 75,
+        },
+      },
     };
     const result = recursion(tree);
     assert.deepStrictEqual(result, [[50], [40, 60], [30, 45, 55, 75]]);
