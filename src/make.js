@@ -1,13 +1,14 @@
-function make(input) {
+function make(...input) {
   const elems = [];
   const foo = function step(...args) {
-    if (!(args[0] instanceof Function)) {
+    if (!(args[args.length - 1] instanceof Function)) {
       elems.push(...args);
       return step;
     }
-    return elems.reduce(...args);
+    elems.push(...args);
+    return elems.reduce(elems.pop());
   };
-  return foo(input);
+  return foo(...input);
 }
 
 module.exports = make;
