@@ -20,4 +20,22 @@ describe('make', () => {
       assert.equal(result, -17);
     });
   });
+  describe('sub', () => {
+  it('should return -6', () => {
+    function sub(a, b) {
+      return a - b;
+    }
+    const result = make(4, 5, 5, sub);
+    assert.equal(result, -6);
+   });
+  });
+  describe('sub', () => {
+    it('should return -12', () => {
+      function sub(a, b) {
+        return a - b;
+      }
+      const result = make(4, 6)(5)(5, sub);
+      assert.equal(result, -12);
+    });
+  });
 });
